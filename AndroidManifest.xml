@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.droid.melodydroid"
+      android:versionCode="6"
+      android:versionName="6.0"
+       >
+       
+      <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />            
+       
+    <application android:name="com.droid.melodydroid.core.MelodyDroidApplication"
+                 android:icon="@drawable/melodica" android:label="@string/app_name">
+        
+        <activity android:name="com.droid.melodydroid.display.DisplaySearchCriteriaNames"
+                  android:label="@string/search_criteria_names"                  
+                  android:windowSoftInputMode="adjustPan"
+                  android:launchMode="singleTask"
+                  android:taskAffinity="com.droid.melodydroidaffinity" 
+                  android:configChanges="orientation|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+                  
+        </activity>
+        
+		<activity android:name="com.droid.melodydroid.display.DisplaySearchCriteriaValues"
+				  android:label="@string/search_criteria_values"
+				  android:taskAffinity="com.droid.melodydroidaffinity"
+				  android:launchMode="singleTop" 
+				  android:configChanges="orientation|keyboardHidden">	
+		</activity>        
+
+		<activity android:name="com.droid.melodydroid.display.DisplayMelodies"
+				  android:label="@string/display_melodies"
+				  android:windowSoftInputMode="adjustPan"
+				  android:taskAffinity="com.droid.melodydroidaffinity"
+				  android:launchMode="singleTop" 
+				  android:configChanges="orientation|keyboardHidden">	
+		</activity>        
+
+		<service android:name="com.droid.melodydroid.core.MDService" 
+				 class="com.droid.melodydroid.core.MDService" >
+			<intent-filter>
+				<action android:name="com.droid.melodydroid.core.MDService" 
+				android:value="com.droid.melodydroid.core.MDService" />
+			</intent-filter>	 
+		</service> 		 
+
+		<activity android:name="com.droid.melodydroid.display.DisplayPlaybackControls"
+				  android:label="@string/display_playback_controls"
+				  android:windowSoftInputMode="adjustPan"
+				  android:taskAffinity="com.droid.melodydroidaffinity"
+				  android:launchMode="singleTop" 
+				  android:configChanges="orientation|keyboardHidden">
+		</activity>   
+		  
+		<activity android:name="com.droid.melodydroid.display.SdCardError"
+				  android:label="@string/error_page" 
+                  android:configChanges="orientation|keyboardHidden">	
+		</activity>     
+       
+		<activity android:name="com.droid.melodydroid.display.MelodySearchActivity"
+                  android:label="@string/search_label"
+                  android:launchMode="singleTop"
+                  android:taskAffinity="com.droid.melodydroidaffinity"
+                  android:windowSoftInputMode="adjustPan" 
+                  android:configChanges="orientation|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+		     <meta-data android:name="android.app.searchable" 
+                       android:resource="@xml/searchable" />
+
+        </activity>
+
+			<meta-data android:name="android.app.default_searchable"
+				android:value="com.droid.melodydroid.display.MelodySearchActivity" />	
+			
+			<provider android:name="com.droid.melodydroid.data.MelodiesProvider" 
+				android:authorities="melodyproviderauthority" 
+				android:syncable="false"/>
+			
+			<provider android:name="com.droid.melodydroid.data.MelodiesSuggestionProvider" 
+				android:authorities="melodysuggestionsproviderauthority" 
+				android:syncable="false"/>
+
+		<activity android:name="com.droid.melodydroid.display.DisplayPlaylists"
+				  android:label="@string/play_list"
+				  android:taskAffinity="com.droid.melodydroidaffinity"
+				  android:launchMode="singleTop"  
+				  android:configChanges="orientation|keyboardHidden">	
+		</activity>     
+
+		<activity android:name="com.droid.melodydroid.display.DisplayPlaylistMelodies"
+				  android:label="@string/play_list_melodies"
+				  android:taskAffinity="com.droid.melodydroidaffinity"
+				  android:launchMode="singleTop" 
+				  android:configChanges="orientation|keyboardHidden">	
+		</activity>     
+       				
+		<receiver android:name="com.droid.melodydroid.core.MelodyDroidIntentReceiver" android:enabled="true">
+			<intent-filter>
+				<action android:name="android.intent.action.MEDIA_MOUNTED" />
+				<data android:scheme="file" />
+			</intent-filter>
+		</receiver>
+       				
+    </application>
+    <uses-sdk android:minSdkVersion="4" /> 
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />	
+	<uses-permission android:name="android.permission.ACCESS_ALL_EXTERNAL_STORAGE" />
+</manifest> 

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  
+<LinearLayout 
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:orientation="vertical"
+   android:id="@+id/mainLinearLayout"
+   >
+
+<LinearLayout 
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:orientation="vertical"
+   android:id="@+id/mainLinearLayout"
+   >
+
+    <TextView
+        android:id="@+id/myMarquee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        
+        />
+
+</LinearLayout>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1"
+    android:gravity = "center" 
+    android:layout_gravity="center_horizontal"    
+    android:id="@+id/songInfoTable">
+
+	<TableRow android:gravity="center">
+
+  	  <TextView android:id="@+id/emptyRow0"   
+        android:textSize="20sp"
+        />
+	</TableRow>
+
+	<TableRow android:gravity="center">
+
+  	  <ImageView android:id="@+id/albumArt"/>
+  	  
+	</TableRow>
+
+
+	<TableRow android:gravity="center">
+  	  <TextView android:id="@+id/emptyRow1"   
+        android:textSize="20sp"
+        />
+	</TableRow>
+
+
+</TableLayout>
+
+  <RelativeLayout android:layout_width="fill_parent"
+          android:layout_height="wrap_content"          
+          android:layout_centerHorizontal="true"
+          android:layout_below="@id/songInfoTable"
+          > 
+
+	<!--ProgressBar android:id="@+id/progress_horizontal"
+        	style="?android:attr/progressBarStyleHorizontal" 
+			android:layout_width="200dip" 
+			android:layout_height="wrap_content" 
+			android:orientation="horizontal" 
+			android:layout_gravity = "center"			
+			/-->
+
+	<SeekBar
+    	android:id="@+id/your_dialog_seekbar"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    >
+	</SeekBar>
+
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:stretchColumns="1"
+    	android:id="@+id/songDurationTable"
+    	android:layout_below="@id/your_dialog_seekbar"
+    	>
+
+	<TableRow>
+  	   <TextView  android:id="@+id/currentTime"
+        android:textSize="15sp"
+        android:textStyle="bold"         
+        />
+
+  	  <TextView android:id="@+id/Duration"   
+        android:textSize="15sp"
+        android:textStyle="bold"        
+        />
+	</TableRow>
+
+	<TableRow>
+  	   <TextView  android:id="@+id/emptyRow3Label"
+        android:textSize="15sp"
+        android:textStyle="bold"         
+        android:text=""
+        />
+
+  	  <TextView android:id="@+id/emptyRow3"   
+        android:textSize="15sp"
+        />
+	</TableRow>
+
+	<TableRow>
+  	   <TextView  android:id="@+id/emptyRow4Label"
+        android:textSize="15sp"
+        android:textStyle="bold"         
+        android:text=""
+        />
+
+  	  <TextView android:id="@+id/emptyRow4"   
+        android:textSize="15sp"
+        />
+	</TableRow>
+
+	</TableLayout>
+
+			
+  </RelativeLayout>
+	
+  <LinearLayout android:id="@+id/PlaybackLinearLayout"
+  		  android:orientation="horizontal"	
+  		  android:layout_width="fill_parent"  
+          android:layout_height="wrap_content"
+          android:gravity="center"> 
+	</LinearLayout>    
+
+			
+</LinearLayout>			 
+</ScrollView>

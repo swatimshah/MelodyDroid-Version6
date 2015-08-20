@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, DisplaySearchCriteriaNames!</string>
+    <string name="app_name">Melody Droid</string>
+    <string name="search_criteria_names">Melody Droid</string>
+    <string name="search_criteria_values">Filter Values</string>  
+    <string name="display_melodies">Melodies</string>
+    <string name="display_playback_controls">Playback Controls</string> 
+    <string name="display_search_ui">Display Search UI</string>
+    <string name="search_label">Melodies</string>
+    <string name="search_hint">Search Hint</string>
+    <string name="home">Home</string>
+    <string name="error_page">Error</string>
+    <string name="error_page_title">Melody Droid Error</string>
+    <string name="search">Search</string>
+    
+    <string name="search_options">Search Melodies</string>
+    <string name="regular_search">Regular</string>
+    <string name="custom_search">Custom</string>
+    <string name="play_list">Play Lists</string>
+    
+    <string name="addtoplaylist">Add To Playlist</string>
+    <string name="newplaylist">New Playlist</string>
+    <string name="play_list_melodies">Playlist Melodies</string> 
+    <string name="onthegoplaylist">On The Go</string>
+	<string name="deleteplaylist">Delete</string>
+	<string name="emptyplaylist">Empty</string>	
+    <string name="dbsync">Refresh</string>    
+        
+</resources>
